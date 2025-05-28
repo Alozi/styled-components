@@ -1,17 +1,15 @@
 import styled, { keyframes } from "styled-components";
 
-import styledComponentsLogo from "./assets/styled-components.svg";
 import { GlobalStyle } from "./styles/GlobalStyle.js";
+import Header from "./components/Header.jsx";
 
 const Container = styled.div`
   padding: 20px;
 `;
 
 const Wrapper = styled.section`
-  display: flex;
-  border: 1px solid red;
   max-width: 1200px;
-  margin: 0 auto; /* Центруємо по горизонталі */
+  margin: 0 auto 20px;
   background-color: #f5f5f5;
   border-radius: 8px;
   padding: 4em;
@@ -85,52 +83,47 @@ const Rotate = styled.div`
 
 export default function App() {
   return (
-    <Container>
-      <GlobalStyle />
-      <Wrapper>
-        <a href="https://styled-components.com/" target="_blank">
-          <img
-            src={styledComponentsLogo}
-            className="logo styled components library"
-            alt="Styled components library logo"
-            height={200}
-            width={200}
+    <>
+      <Header />
+      <Container>
+        <GlobalStyle />
+
+        <Wrapper>
+          <Title>Hello World!</Title>
+        </Wrapper>
+
+        <div>
+          <Button>Normal</Button>
+          <Button $primary>Primary</Button>
+          <Button as="a" href="#">
+            Link with Button styles
+          </Button>
+          <TomatoButton>Tomato Button</TomatoButton>
+          <TomatoButton as="a" href="#">
+            Link with Tomato Button styles
+          </TomatoButton>
+          <Button as={ReversedButton}>
+            Custom Button with Normal Button styles
+          </Button>
+        </div>
+
+        <div>
+          <Link>Unstyled, boring Link</Link>
+          <br />
+          <StyledLink>Styled, exciting Link</StyledLink>
+        </div>
+
+        <div>
+          <Input defaultValue="@probablyup" type="text" />
+          <Input
+            defaultValue="@geelen"
+            type="text"
+            $inputColor="rebeccapurple"
           />
-        </a>
-        <h1>Styled components pet project</h1>
-      </Wrapper>
+        </div>
 
-      <Wrapper>
-        <Title>Hello World!</Title>
-      </Wrapper>
-
-      <div>
-        <Button>Normal</Button>
-        <Button $primary>Primary</Button>
-        <Button as="a" href="#">
-          Link with Button styles
-        </Button>
-        <TomatoButton>Tomato Button</TomatoButton>
-        <TomatoButton as="a" href="#">
-          Link with Tomato Button styles
-        </TomatoButton>
-        <Button as={ReversedButton}>
-          Custom Button with Normal Button styles
-        </Button>
-      </div>
-
-      <div>
-        <Link>Unstyled, boring Link</Link>
-        <br />
-        <StyledLink>Styled, exciting Link</StyledLink>
-      </div>
-
-      <div>
-        <Input defaultValue="@probablyup" type="text" />
-        <Input defaultValue="@geelen" type="text" $inputColor="rebeccapurple" />
-      </div>
-
-      <Rotate>&lt; 💅🏾 &gt;</Rotate>
-    </Container>
+        <Rotate>&lt; 💅🏾 &gt;</Rotate>
+      </Container>
+    </>
   );
 }
