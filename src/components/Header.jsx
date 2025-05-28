@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import styledComponentsLogo from "../assets/styled-components.svg";
 
@@ -6,6 +7,7 @@ const CustomHeader = styled.header`
   display: flex;
   gap: 20px;
   align-items: center;
+  justify-content: space-between;
   border: 1px solid #bf4f74;
   margin: 0 auto 20px;
   background-color: #f5f5f5;
@@ -17,6 +19,29 @@ const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   color: #bf4f74;
+`;
+
+const StyledLink = styled(Link)`
+  color: black;
+  font-size: 1em;
+  display: inline-block;
+  margin: 0 5px;
+
+  &:after {
+    content: "|";
+    margin-left: 5px;
+  }
+
+  &:last-child {
+    &:after {
+      content: "";
+      margin-left: 5px;
+    }
+  }
+
+  &:hover {
+    color: #bf4f74;
+  }
 `;
 
 export default function Header() {
@@ -32,6 +57,11 @@ export default function Header() {
         />
       </a>
       <Title>Styled components pet project</Title>
+      <nav>
+        <StyledLink to="/">Home</StyledLink>
+        <StyledLink to="/basic">Basic</StyledLink>
+        <StyledLink to="/theme-toogle">Theme Toogle</StyledLink>
+      </nav>
     </CustomHeader>
   );
 }
