@@ -26,18 +26,7 @@ const StyledLink = styled(Link)`
   font-size: 1em;
   display: inline-block;
   margin: 0 5px;
-
-  &:after {
-    content: "|";
-    margin-left: 5px;
-  }
-
-  &:last-child {
-    &:after {
-      content: "";
-      margin-left: 5px;
-    }
-  }
+  text-decoration: none;
 
   &:hover {
     color: #bf4f74;
@@ -59,7 +48,9 @@ export default function Header() {
       <Title>Styled components pet project</Title>
       <nav>
         <StyledLink to="/">Home</StyledLink>
+        <span>|</span>
         <StyledLink to="/basic">Basic</StyledLink>
+        <span>|</span>
         <StyledLink to="/theme-toogle">Theme Toogle</StyledLink>
       </nav>
     </CustomHeader>
