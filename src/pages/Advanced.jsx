@@ -1,5 +1,9 @@
 import styled, { ThemeProvider } from "styled-components";
 
+const Container = styled.div`
+  padding: 20px;
+`;
+
 // Define our button, but with the use of props.theme this time
 const Button = styled.button`
   font-size: 1em;
@@ -24,9 +28,24 @@ const theme = {
   main: "mediumseagreen",
 };
 
+// Static object
+const Box = styled.div({
+  background: "#BF4F74",
+  height: "50px",
+  width: "50px",
+  marginTop: "20px",
+});
+
+// Adapting based on props
+const PropsBox = styled.div((props) => ({
+  background: props.$background,
+  height: "50px",
+  width: "50px",
+}));
+
 export default function Advanced() {
   return (
-    <>
+    <Container>
       <div>
         <Button>Normal</Button>
 
@@ -34,6 +53,16 @@ export default function Advanced() {
           <Button>Themed</Button>
         </ThemeProvider>
       </div>
-    </>
+      <div>
+        <p>
+          styled-components optionally supports writing CSS as JavaScript
+          objects instead of strings. This is particularly useful when you have
+          existing style objects and want to gradually move to
+          styled-components.
+        </p>
+        <Box />
+        <PropsBox $background="blue" />
+      </div>
+    </Container>
   );
 }
