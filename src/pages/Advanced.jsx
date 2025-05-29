@@ -1,4 +1,4 @@
-import styled, { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider, css } from "styled-components";
 
 const Container = styled.div`
   padding: 20px;
@@ -43,6 +43,18 @@ const PropsBox = styled.div((props) => ({
   width: "50px",
 }));
 
+const Wrapper = styled.section`
+  padding: 4rem;
+  marfing: 2rem;
+  background-color: ${({ color }) => (color ? color : "papayawhip")};
+  ${({ is3D }) =>
+    is3D &&
+    css`
+      background-color: yellow;
+      box-shadow: 1rem 1rem black;
+    `}
+`;
+
 export default function Advanced() {
   return (
     <Container>
@@ -63,6 +75,12 @@ export default function Advanced() {
         <Box />
         <PropsBox $background="blue" />
       </div>
+      <Wrapper>
+        <h1>Hello World!</h1>
+      </Wrapper>
+      <Wrapper is3D={true}>
+        <h1>Hello World 3D!</h1>
+      </Wrapper>
     </Container>
   );
 }
