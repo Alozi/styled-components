@@ -51,6 +51,8 @@ export default function Header() {
         <span>|</span>
         <StyledLink to="/basic">Basic</StyledLink>
         <span>|</span>
+        <StyledLink to="/advanced">Advanced</StyledLink>
+        <span>|</span>
         <StyledLink to="/theme-toogle">Theme Toogle</StyledLink>
       </nav>
     </CustomHeader>
