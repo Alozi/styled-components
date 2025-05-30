@@ -5,6 +5,7 @@ import Header from "./components/Header.jsx";
 import Basic from "./pages/Basic.jsx";
 import Home from "./pages/Home.jsx";
 import Advanced from "./pages/Advanced.jsx";
+import ThemeToogle from "./pages/ThemeToogle.jsx";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/basic" element={<Basic />} />
         <Route path="/advanced" element={<Advanced />} />
+        <Route path="/theme-toogle" element={<ThemeToogle />} />
       </Routes>
     </BrowserRouter>
   );

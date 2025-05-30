@@ -9,7 +9,7 @@ const CustomHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   border: 1px solid #bf4f74;
-  margin: 0 auto 20px;
+  margin: 0 auto;
   background-color: #f5f5f5;
   border-radius: 0 0 8px 8px;
   padding: 10px;
